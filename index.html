@@ -16,16 +16,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap&family=Poppins&display=swap rel="
         stylesheet">
 </head>
-
+<!-- 
+    * data-word-index - will display the order of the animation
+    * data-word-index needs to directly display the children of the text you want to animate
+-->
 <body>
-    <section class="section-two">
+    <section class="section-one">
         <div class="container">
             <div class="Word__Reveal">
                 <div class="Word__Reveal-container">
                     <img data-word-index="1" src="assets/images/woodenwick.png" alt="woodenwick logo"
                         class="original-logo">
                     <svg data-word-index="2" class="makesy-logo header__text" viewBox="0 0 173 45.84">
-                        <!-- <rect class="hide-img-rect" x="0" y="100%" id="G" /> -->
+                        <!-- <clipPath id="rec-clip">
+                            <rect class="hide-img-rect" x="0" y="-10" width="100%" height="40" id="G" fill="none"/>
+                        </clipPath> -->
                         <path id="y" class="st0-logo-letter"
                         d="M159.73,37.38c-1.28,2.58-4.18,7.48-9.04,7.48c-4.86,0-6.9-3.38-6.9-3.38l6.9-4.99
 	                    c0,0,4.93,3.86,7.82-0.03L147.87,17l-3.18-2.26h16.4L157.96,17l5.18,12.17l4.39-12.16l-3.6-2.26H173l-3.13,2.26L159.73,37.38z" />
@@ -49,7 +54,6 @@
                         c3.78-3,6.26-4.39,8.88-4.39c3.18,0,4.95,1.57,5.56,4.58c3.92-3.14,6.45-4.58,9.11-4.58c3.97,0,5.79,2.45,5.79,7.16v16.64L32,37.51z
                         " />
                     </svg>
-
                     <h1 data-word-index="2" class="header__text">ANOTHER NEAT SLOGAN</h1>
                     <h1 data-word-index="2" class="header__text">WE LOVE SLOGANS</h1>
                     <svg data-word-index="3" class="dodads" viewBox="0 0 173 43">
@@ -68,9 +72,8 @@
                         <circle id="top-right" class="st8-top-right" cx="167.66" cy="5.08" r="3.41" />
                     </svg>
                 </div>
-                <button class="btn btn-primary c-button-count">click me</button>
+                <!-- <button class="btn btn-primary c-button-count">click me</button> -->
             </div>
-
         </div>
     </section>
 </body>

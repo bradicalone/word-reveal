@@ -39,7 +39,7 @@ function WordReplace(main) {
 
             if (index === 0) {
                 headerObj.el.style.transform = 'translate(-50%, ' + headerObj.height + 'px)'
-                // headerObj.el.style.opacity = 0
+
                 headerObj.el.addEventListener('transitionend', e => {
 
                     e.target.style.opacity = 0

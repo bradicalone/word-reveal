@@ -18,8 +18,9 @@
 </head>
 <!-- 
     * data-word-index - will display the order of the animation
-    * data-word-index needs to directly display the children of the text you want to animate
+    * data-word-index needs to directly display the children of the text or svg elements you want to animate
 -->
+
 <body>
     <section class="section-one">
         <div class="container">
@@ -28,13 +29,11 @@
                     <img data-word-index="1" src="assets/images/woodenwick.png" alt="woodenwick logo"
                         class="original-logo">
                     <svg data-word-index="2" class="makesy-logo header__text" viewBox="0 0 173 45.84">
-                        <!-- <clipPath id="rec-clip">
-                            <rect class="hide-img-rect" x="0" y="-10" width="100%" height="40" id="G" fill="none"/>
-                        </clipPath> -->
                         <path id="y" class="st0-logo-letter"
-                        d="M159.73,37.38c-1.28,2.58-4.18,7.48-9.04,7.48c-4.86,0-6.9-3.38-6.9-3.38l6.9-4.99
+                            d="M159.73,37.38c-1.28,2.58-4.18,7.48-9.04,7.48c-4.86,0-6.9-3.38-6.9-3.38l6.9-4.99
 	                    c0,0,4.93,3.86,7.82-0.03L147.87,17l-3.18-2.26h16.4L157.96,17l5.18,12.17l4.39-12.16l-3.6-2.26H173l-3.13,2.26L159.73,37.38z" />
-                        <path id="s" class="st0-logo-letter" d="M123.29,36.77l1.45-7.53h0.05l5.79,7.67c0.5,0.16,1.02,0.24,1.54,0.23c2.06,0,3.46-1.06,3.46-2.96
+                        <path id="s" class="st0-logo-letter"
+                            d="M123.29,36.77l1.45-7.53h0.05l5.79,7.67c0.5,0.16,1.02,0.24,1.54,0.23c2.06,0,3.46-1.06,3.46-2.96
                         c0-1.39-0.84-2.17-2.8-3.19l-3.08-1.62c-3.88-2.03-5.75-4.21-5.75-7.72c0-4.67,3.83-7.72,10.05-7.72c2.65-0.02,5.27,0.43,7.75,1.34
                         l-1.82,7.3h-0.05l-5.42-7.63c-0.26-0.09-0.52-0.14-0.79-0.14c-2.06,0-3.08,1.16-3.08,2.45c0,1.62,0.75,2.77,3.5,4.2l3.5,1.85
                         c3.22,1.71,4.91,4.02,4.91,6.89c0,4.81-4.91,7.77-10.65,7.77C128.95,37.97,126.07,37.57,123.29,36.77z" />

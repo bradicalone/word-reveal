@@ -17,7 +17,7 @@ img.original-logo {
 
 .header--word {
     & > * {
-        transform: translate(0px, 100%) rotate(135deg);
+        transform: translateY(100%) rotate(135deg);
         transition: transform .5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 }
@@ -44,8 +44,10 @@ img.original-logo {
             font-size: 40px;
             overflow: hidden;
         }
-        .header__text {
+        .header--word {
             overflow: hidden;
+        }
+        .header__text {
             /* Gets removed after elements are loaded */
             visibility: hidden;
             span {

@@ -15,6 +15,12 @@ function WordReplace(main) {
     })
     // observer.observe(main)
 
+    const observe = function (inView) {
+        if (inView && !shown) {
+            // Will finish a screen resize here from observer ....
+        }
+    }
+
     const setTransformOrigin = (svg) => {
         const [x, y, width, height] = svg.getAttribute('viewBox').split(' ')
         const children = svg.children
@@ -23,12 +29,6 @@ function WordReplace(main) {
             const { x, y, width, height } = child.getBBox()
             child.style.transformOrigin = (x + width / 2) + 'px ' + (y + height / 2) + 'px'
         })
-    }
-    
-    const observe = function (inView) {
-        if (inView && !shown) {
-
-        }
     }
 
     this.reveal = function (e) {
@@ -56,7 +56,7 @@ function WordReplace(main) {
                 for (let i = lettersLength - 1; i >= 0; i--) {
 
                     setTimeout(() => {
-                        letters[i].style.transform = 'translate(0, 0%) rotate(0deg)'
+                        letters[i].style.transform = 'translateY(0) rotate(0deg)'
                     }, i * 70)
                 }
 
@@ -100,7 +100,7 @@ function WordReplace(main) {
         while (i--) {
             const step = headers[i].dataset.wordIndex
 
-            // First step image element
+            /* First step Image element */
             if (step == 1) {
                 const nextElementHeight = headers[i].parentNode.getBoundingClientRect().height - headers[i].offsetTop
 
@@ -108,9 +108,10 @@ function WordReplace(main) {
                     height: nextElementHeight,
                     el: headers[i]
                 }
+            /* Second step for all animated letters */
             } else if (step == 2) {
 
-                /* Svg elements */
+                /* SVG elements */
                 if (headers[i].tagName === 'svg') {
 
                     setTransformOrigin(headers[i])
@@ -125,7 +126,7 @@ function WordReplace(main) {
                     if (!header_data[1]) header_data[1] = []
                     header_data[1].unshift({ height: svg_height, el: headers[i], letters: header_text })
 
-                /* Dom elements */
+                /* HTML elements */
                 } else {
                     const header_text = headers[i].textContent.split(/\s+/).map((word) => {
                         return '<div class="header--word">' + ' <span>' + word.split('').join('</span><span>') + '</span>' + '</div>&nbsp;'
@@ -139,9 +140,9 @@ function WordReplace(main) {
                     header_data[1].unshift({ height: newHeight, el: headers[i], letters: headers[i].querySelectorAll('.header--word span') })
 
                 }
-            /* Dodads */
+            /* Third step for any random Dodads */
             } else if (step == 3) {
-                // last step either push to header_data array here,  or loop through just selector elements in the animate
+                // last step either push to header_data array here,  or loop through just selector elements in the step 2 animate()
             }
            headers[i].style.visibility = 'visible'
         }
@@ -159,7 +160,7 @@ function wordReplace() {
     return Array.from(sections).map(carouselElem => {
         try {
             let reveal = new WordReplace(carouselElem)
-
+            /* Use on click instead */
             // carouselElem.querySelector('.c-button-count').addEventListener('click', reveal.reveal.bind(reveal))
             return reveal
         } catch (e) {
@@ -172,8 +173,6 @@ function wordReplace() {
 
 
 window.addEventListener('DOMContentLoaded', function(){
-    const reveal = wordReplace()[0]
-    // setTimeout(() => {
+        const reveal = wordReplace()[0]
         reveal.reveal()
-    // },5000)
 })
